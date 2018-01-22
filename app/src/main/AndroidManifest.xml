@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.iman.inc.zakatcount">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Count_ZF"></activity>
+        <activity
+            android:name=".Count_ZF"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".List_ZF"
+            android:parentActivityName=".MainActivity" />
+
+
+        <activity android:name=".Count_ZM"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".List_ZM"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".PanduanZakat" />
+        <activity android:name=".HukumZF" />
+        <activity android:name=".HukumZM"></activity>
     </application>
 
 </manifest>

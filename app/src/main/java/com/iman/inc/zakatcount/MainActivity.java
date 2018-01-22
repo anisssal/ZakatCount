@@ -1,14 +1,18 @@
 package com.iman.inc.zakatcount;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,12 +64,60 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
+    //handle click di navigation drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (id==R.id.item_Count){
+            startActivity(new Intent(MainActivity.this,Count_ZF.class));
+        }
+        if (id==R.id.item_listzf){
+            startActivity(new Intent(MainActivity.this, List_ZF.class));
+        }
+        if (id==R.id.item_about){
+            View view = getLayoutInflater().inflate(R.layout.dialog_about, null);
+
+             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setView(view);
+
+            final AlertDialog alertDialog = builder.show();
+
+            Button oke = view.findViewById(R.id.btnOkeDialogAbout);
+            oke.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    alertDialog.dismiss();
+                }
+            });
+        }
+        if (id==R.id.item_countZM){
+            startActivity(new Intent(MainActivity.this, Count_ZM.class));
+
+        }
+
+        if (id==R.id.item_listzm){
+            startActivity(new Intent(MainActivity.this,List_ZM.class));
+        }
+        if (id==R.id.item_petunjuk){
+            Intent i =new Intent(MainActivity.this, PanduanZakat.class);
+            startActivity(i);
+        }
+
+        if (id==R.id.item_hukumzf){
+            Intent i =new Intent(MainActivity.this, HukumZF.class);
+            startActivity(i);
+        }
+        if (id==R.id.item_hukumzm){
+            Intent i =new Intent(MainActivity.this, HukumZM.class);
+            startActivity(i);
+        }
+
+
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

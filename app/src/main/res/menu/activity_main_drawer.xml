@@ -20,6 +20,22 @@
         </menu>
     </item>
 
+    <item android:title="Zakat Mal" >
+        <menu>
+            <item
+                android:id="@+id/item_countZM"
+                android:icon="@drawable/ic_zmal"
+                android:title="Zakat Mal" />
+            <item
+                android:id="@+id/item_listzm"
+                android:icon="@drawable/ic_list_24dp"
+                android:title="List Zakat Mal" />
+            <item
+                android:id="@+id/item_hukumzm"
+                android:icon="@drawable/law"
+                android:title="Hukum Zakat Mal" />
+        </menu>
+    </item>
     <item android:title="Others">
         <menu>
             <item
